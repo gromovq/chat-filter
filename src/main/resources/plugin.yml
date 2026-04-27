@@ -1,0 +1,13 @@
+name: ZChatFilter
+main: it.gromov.chatfilter.bootstrap.ChatFilterPlugin
+version: 1.0.0
+api-version: 1.16
+author: gromov
+commands:
+  zchatfilter:
+    description: Main command
+    usage: /zchatfilter <reload|info>
+    permission: zchatfilter.admin
+permissions:
+  zchatfilter.admin:
+    default: op
