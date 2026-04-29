@@ -1,0 +1,66 @@
+anti-ads:
+  enabled: true
+  ghost-message: true # Если тру - сообщения о рекламе будут видны пиарщику, а другим игрокам нет
+  whitelist:
+    - "zertix.su"
+    - "zertix"
+    - "dataforest_net"
+    - "t.me/zertix"
+    - "t.me/dataforest_net"
+    - "discord.gg/zertix"
+    - "@dataforest_net"
+    - "@zertix"
+  patterns:
+    - "\\b\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}(:\\d{1,5})?\\b"
+    - "(?i)(?!.*(zertix|dataforest_net))\\b\\w+\\.(mc|pw|su|fun|net|ru|com|org|gg|pro|online|space|top|xyz|site|club|world|play|mine|craft|io|me|cc|ws|tk|ml|ga|cf|gq)\\b"
+    - "(?i)(?!.*(zertix|dataforest_net))\\b\\w{2,}\\s+(mc|pw|su|fun|net|ru|com|org|gg|pro|online|space|top|xyz|site|club|world|play|mine|craft|io|me|cc|ws|tk|ml|ga|cf|gq)\\b"
+    - "(?i)(?!.*(zertix|dataforest_net))discord\\.(gg|com/invite)/\\w+"
+    - "(?i)(?!.*(zertix|dataforest_net))t\\.me/(?!dataforest_net|zertix)\\w+"
+    - "(?i)(?!.*(zertix|dataforest_net))(youtube\\.com|youtu\\.be)/(watch\\?v=|shorts/|@(?!dataforest_net|zertix))\\w+"
+    - "(?i)(?!.*(zertix|dataforest_net))tiktok\\.com/@(?!dataforest_net|zertix)\\w+"
+  blocked-words:
+    - "открываем новый сервер"
+    - "новый вайп"
+    - "выдам донат"
+    - "заходи на"
+    - "лучший сервер"
+    - "funtime"
+    - "holyworld"
+    - "vimeworld"
+    - "hypixel"
+    - ".mc"
+    - ".pw"
+    - ".su"
+    - ".fun"
+    - ".gg"
+    - ".net"
+    - ".ru"
+    - ".com"
+
+database:
+  type: "SQLITE" # SQLITE or MYSQL
+  sqlite:
+    file: "data.db"
+  mysql:
+    host: "127.0.0.1"
+    port: 3306
+    database: "chatfilter"
+    username: "root"
+    password: "password"
+    use-ssl: false
+
+telegram:
+  enabled: false
+  bot-token: ""
+  admin-chat-id: ""
+  proxy:
+    enabled: false
+    type: "SOCKS" # DIRECT, HTTP, SOCKS
+    host: "127.0.0.1"
+    port: 1080
+
+messages:
+  blocked: "&cРеклама запрещена на сервере."
+  blocked-ghost-echo: "&7[ghost] &f%message%"
+  reload-done: "&aКонфиг перезагружен."
+  no-permission: "&cНедостаточно прав."
